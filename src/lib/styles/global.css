@@ -4,7 +4,7 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     color: #353535;
-    background-image: url('background.jpg');
+    background-image: url('/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
