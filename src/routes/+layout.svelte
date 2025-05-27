@@ -17,6 +17,10 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         activeSection = entry.target.id;
+                        // Update the URL hash without scrolling
+                        if (window.location.hash !== `#${activeSection}`) {
+                            history.replaceState(null, '', `#${activeSection}`);
+                        }
                     }
                 });
             },

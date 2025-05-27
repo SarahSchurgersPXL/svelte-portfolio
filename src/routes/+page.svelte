@@ -396,6 +396,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 5rem;
   }
 
   /* Skills */
@@ -413,6 +414,7 @@
     font-size: 3rem;
     margin-bottom: 0rem;
     color: #fff;
+    margin-top: 0;
   }
 
   #skills h3 {
@@ -598,6 +600,7 @@
   #projects h2 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    padding-bottom: 5rem;
     color: #fff;
   }
 
@@ -654,7 +657,7 @@
   }
 
   .single-img {
-    width: 100%;
+    width: 75%;
     height: auto;
     object-fit: contain;
     border-radius: 12px;
@@ -722,6 +725,9 @@
   }
 
   @media (max-width: 900px) {
+    #home {
+      padding-top: 0;
+    }
     .name {
       font-size: 3rem;
       margin-top: 0rem;
@@ -816,7 +822,7 @@
     #education h2,
     #experience h2 {
       font-size: 2rem;
-      margin-top: 4rem;
+      margin-top: 1rem;
     }
 
     #skills h2 {
@@ -850,7 +856,6 @@
     }
 
     #projects h2 {
-      margin-top: 4rem;
       font-size: 2rem;
       margin-top: 0;
       padding-bottom: 1rem;
@@ -874,9 +879,16 @@
       font-size: 1rem;
     }
 
-      .skill-item {
-    font-weight: 500;
-    font-size: 0.9rem;
-  }
+    .skill-item {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .project-card {
+      width: 75%;
+      margin: 0 auto;
+    }
+    .single-img {
+      width: 75%;
+    }
   }
 </style>
