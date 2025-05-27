@@ -157,6 +157,44 @@
   </div>
 </section>
 
+<section id="about" class="about-section">
+  <div class="about-content">
+    <img src="me2.png" alt="Sarah Schurgers" class="about-photo" />
+    <div class="about-text">
+      <p>
+        Hi, I'm Sarah Schurgers — a junior developer with a background in agro-
+        and biotechnology, currently exploring the world of IT with a growing
+        focus on frontend and data-driven applications.
+      </p>
+      <p>
+        I enjoy building practical, user-friendly solutions and continuously
+        expanding my skills. Over the past year, I’ve worked with frameworks
+        like Angular, React Native, and SvelteKit. I love discovering new tools
+        and figuring out how things work. My projects reflect both my technical
+        growth and personal interests — whether it’s tracking moods, organizing
+        book collections, or building a portfolio site from scratch.
+      </p>
+      <p>
+        In addition to coding, I have a deep interest in <strong
+          >data analysis and visualisation</strong
+        >. I’m currently learning Python and Power BI, aiming to combine
+        technical development with analytical insights in my future career. I'm
+        also passionate about user experience, clear structure, and accessible
+        design.
+      </p>
+      <p>
+        Outside of IT, I’m into science fiction and fantasy books, piano
+        playing, and caring for my ever-growing collection of 30+ houseplants —
+        they keep me grounded, literally.
+      </p>
+      <p>
+        I'm looking forward to opportunities where I can contribute, grow, and
+        collaborate — ideally in a role that bridges development and data.
+      </p>
+    </div>
+  </div>
+</section>
+
 <section id="skills">
   <h2>Skills</h2>
   <div class="skills-section">
@@ -180,8 +218,10 @@
 
 <section id="education">
   <h2>Education</h2>
-  <Timeline position={isMobile ? "alternate" : "right"}
-  style={isMobile ? "padding: 0rem;" : ""}>
+  <Timeline
+    position={isMobile ? "alternate" : "right"}
+    style={isMobile ? "padding: 0rem;" : ""}
+  >
     {#each educaction as edu}
       <TimelineItem style="margin-top: 2rem; margin-bottom: 1rem; padding: 0;">
         <TimelineOppositeContent
@@ -208,8 +248,10 @@
 
 <section id="experience">
   <h2>Experience</h2>
-  <Timeline position={isMobile ? "alternate" : "right"}
-  style={isMobile ? "padding: 0rem;" : ""}>
+  <Timeline
+    position={isMobile ? "alternate" : "right"}
+    style={isMobile ? "padding: 0rem;" : ""}
+  >
     {#each experiences as experience}
       <TimelineItem style="margin-top: 2rem; margin-bottom: 1rem; padding: 0;">
         <TimelineOppositeContent
@@ -254,12 +296,12 @@
 <style>
   /* Home */
   #home {
-    padding-top: 15rem;
     color: #333;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   #home p {
@@ -297,10 +339,10 @@
     font-weight: 600;
     color: #fff;
     text-decoration: none;
-    margin-top: 2rem;
     margin-bottom: 1rem;
+    padding-top: 0rem;
+    margin-top: 0rem;
     text-align: center;
-    padding-top: 1rem;
     background: linear-gradient(
       90deg,
       #f9f9f9,
@@ -314,10 +356,50 @@
     background-clip: text;
     animation: fadeIn 1s ease-in-out both;
   }
+  /* About */
+  #about {
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #about p {
+    margin: 4px 0;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+    max-width: 850px;
+    animation: fadeIn 1s ease-in-out both;
+    animation-delay: 1s;
+  }
+
+  .about-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 3px solid rgba(255, 255, 255, 0.103);
+    background: rgba(255, 255, 255, 0.1);
+    animation: fadeIn 1s ease-in-out both;
+  }
+
+  .about-text {
+    margin-top: 1.5rem;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   /* Skills */
   #skills {
-    padding-top: 3rem;
     color: #fff;
     text-align: center;
     display: flex;
@@ -391,7 +473,6 @@
   }
   /* Education */
   #education {
-    padding-top: 4rem;
     color: #fff;
     text-align: center;
     display: flex;
@@ -447,7 +528,6 @@
   }
   /* Experience */
   #experience {
-    padding-top: 4rem;
     color: #fff;
     text-align: center;
     display: flex;
@@ -504,13 +584,12 @@
 
   /* Projects */
   #projects {
-    padding-top: 4rem;
     color: #fff;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding-bottom: 10.5rem;
     max-width: 900px;
     margin: 0 auto;
@@ -644,11 +723,14 @@
 
   @media (max-width: 900px) {
     .name {
-      font-size: 4rem;
+      font-size: 3rem;
+      margin-top: 0rem;
+      padding-top: 0rem;
     }
 
     section h2 {
       font-size: 2rem;
+      margin-top: 0;
     }
 
     .skills-section {
@@ -671,12 +753,6 @@
       text-align: center;
     }
 
-    #home {
-      padding-top: 5rem;
-      color: #333;
-      text-align: center;
-    }
-
     #home p {
       margin: 4px 0;
       font-size: 1.3rem;
@@ -696,7 +772,6 @@
     }
 
     #skills {
-      padding-top: 1rem;
       padding-bottom: 5rem;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -739,11 +814,14 @@
     }
 
     #education h2,
-    #experience h2, #skills h2 {
-      margin-top: 4rem;
+    #experience h2 {
       font-size: 2rem;
+      margin-top: 4rem;
     }
 
+    #skills h2 {
+      font-size: 2rem;
+    }
     #education h3,
     #experience h3 {
       font-size: 1.1rem;
@@ -786,5 +864,19 @@
       max-width: 100%;
       padding: 0 0.5rem;
     }
+
+    #about {
+      padding-top: 4rem;
+      padding-bottom: 5rem;
+    }
+
+    #about p {
+      font-size: 1rem;
+    }
+
+      .skill-item {
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
   }
 </style>

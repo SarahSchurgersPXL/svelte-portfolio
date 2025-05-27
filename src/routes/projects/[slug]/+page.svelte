@@ -50,6 +50,7 @@
     description: string;
     tech: readonly string[];
     images?: string[];
+    github?: string;
   };
 
   const projectDetails = {
@@ -68,6 +69,7 @@
         "bookkeeper4.jpg",
         "bookkeeper2.jpg",
       ],
+      github: "https://github.com/SarahSchurgersPXL/Bookkeeper2",
     },
     "warehouse-app": {
       title: "Warehouse Manager",
@@ -94,6 +96,7 @@
         "moodtracker-month.png",
         "moodtracker-pie.png",
       ],
+      github: "https://github.com/SarahSchurgersPXL/mood-tracker",
     },
   } as const;
 
@@ -122,7 +125,17 @@
     <div class="project-detail">
       <h1 class="project-title">{project.title}</h1>
       <p class="description">{project.description}</p>
-
+      {#if project.github}
+        <a
+          class="github-link"
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View on GitHub"
+        >
+          <Icon icon="mdi:github" width="3em" height="3em" />
+        </a>
+      {/if}
       <h3>Technologies used:</h3>
       <ul class="tech-list">
         {#each project.tech as t}
@@ -321,7 +334,7 @@
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    margin: 2rem 0 1rem 0;
+    margin: 1rem 0 1rem 0;
   }
 
   .embla__carousel-wrapper {
@@ -347,6 +360,19 @@
     color: #fff;
   }
 
+  .github-link {
+  display: inline-block;
+  margin-top: 1.2rem;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 0rem;
+}
+
+.github-link:hover {
+  transform: scale(1.15);
+}
+
   @media (max-width: 900px) {
     .project-title {
       font-size: 2.5rem;
@@ -354,7 +380,7 @@
     }
     .description {
       font-size: 1.1rem;
-    }  
+    }
     .project-detail,
     .embla__controls-side {
       padding-left: 1rem;
@@ -369,6 +395,21 @@
     }
     .embla__controls-side {
       gap: 0.5rem;
+    }
+    h3 {
+      margin-top: 0.5rem;
+      margin-bottom: 0rem;
+    }
+    .tech-list {
+      justify-content: center;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .github-link {
+      margin-top: 0rem;
+      font-size: 1.2rem;
     }
   }
 </style>

@@ -4,7 +4,7 @@
     let activeSection = 'home';
 
     // List of section IDs in order
-    const sectionIds = ['skills', 'education', 'experience', 'projects'];
+    const sectionIds = ['about', 'skills', 'education', 'experience', 'projects'];
 
     onMount(() => {
         // Add 'home' if you have a #home section
@@ -36,6 +36,9 @@
   <div class="nav-container">
     <a href="/#home" class="nav-link-brand">Sarah Schurgers</a>
     <div class="nav-links {menuOpen ? 'open' : ''}">
+      <a href="/#about" class="nav-link" class:active={activeSection === 'about'}>
+        <i class="fas fa-user"></i> About
+      </a>
       <a href="/#skills" class="nav-link" class:active={activeSection === 'skills'}><i class="fas fa-lightbulb"></i> Skills</a>      
       <a href="/#education" class="nav-link" class:active={activeSection === 'education'}><i class="fas fa-graduation-cap"></i> Education</a>
       <a href="/#experience" class="nav-link" class:active={activeSection === 'experience'}><i class="fas fa-briefcase"></i> Experience</a>
